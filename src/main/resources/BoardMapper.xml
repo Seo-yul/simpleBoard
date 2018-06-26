@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.BoardDao">
+	<insert id="insertBoard" parameterType="BOARD">
+	INSERT INTO GUESTBOARD (board_num, user_id, board_title, board_detail, board_pw)
+	VALUES (guest_seq.nextVal, #{user_id}, #{board_title}, #{board_detail}, #{board_pw})
+	</insert>
+	<select id="selectBoard" resultType="BOARD">
+	SELECT
+	board_num, user_id, board_title, board_detail, board_lastregdate
+	FROM GUESTBOARD order by board_num
+	</select>
+</mapper>
