@@ -21,8 +21,7 @@ $(function () {
 	$(".board").click(function(){
 		
 		var c = $(this).attr("class")
-		c = "."+ c.substring(6,10)
-		alert(c)
+		c = "."+c.substring(6,c.lenghth)
 		$(c).css("color","red")
 	})
 })
